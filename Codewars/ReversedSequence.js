@@ -18,4 +18,8 @@ This code creates a function called reverseSeq which takes in a number (n) as an
 It then creates an empty array called arr. 
 A for loop is used to iterate through the numbers from 1 to n and push each number into the arr array. 
 Finally, the arr array is reversed and returned.
+
+The reverse() method reverses the order of the elements in an array.
+The reverse() method overwrites the original array.
+
 */
