@@ -32,13 +32,26 @@ let prices = [7, 1, 5, 3, 6, 4];
 let maxProfit = (prices) => {
   let maxprofit = 0;
   for (let i = 1; i < prices.length; i++) {
-    // Add to the max profit total if the current price is greater than previous
-    // We "sell" when the the opposite is true because we will not buy on days that dip.
-    if (prices[i] > prices[i - 1])
-      // Add the increse in price to our profit
-      maxprofit += prices[i] - prices[i - 1];
+    if (prices[i] > prices[i - 1]) maxprofit += prices[i] - prices[i - 1];
   }
   return maxprofit;
 };
 
 console.log("maxProfit", maxProfit(prices));
+
+/* 
+This code defines a JavaScript function maxProfit that calculates the 
+maximum profit that can be made by buying and selling a stock.
+The function takes an array prices as input, which represents the 
+prices of a stock at different times. The function then calculates the 
+maximum profit that can be made by buying and selling the stock by 
+iterating through the prices array and checking if the price at the current 
+time (prices[i]) is greater than the price at the previous 
+time (prices[i-1]). If it is, the difference between the 
+two prices (prices[i] - prices[i - 1]) is added to the maxprofit variable.
+At the end of the loop, the maxprofit variable will contain the 
+maximum profit that can be made by buying and selling the stock. 
+The function returns the maxprofit variable as its result.
+Note that this code assumes that you can only make one buy and one 
+sell and that you must buy before you can sell.
+*/
