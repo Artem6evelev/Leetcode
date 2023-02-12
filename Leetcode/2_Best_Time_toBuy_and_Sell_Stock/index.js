@@ -30,21 +30,15 @@ Constraints:
 let prices = [7, 1, 5, 3, 6, 4];
 
 let maxProfit = (prices) => {
-  let sellIdx = prices.length - 1;
-  let profit = 0;
-
-  for (let buyIdx = prices.length - 1; buyIdx >= 0; buyIdx--) {
-    let buyVal = prices[buyIdx];
-    let sellVal = prices[sellIdx];
-
-    if (buyVal - sellVal >= 0) {
-      sellIdx = buyIdx;
-    } else {
-      let price = sellVal - buyVal;
-      profit = Math.max(profit, price);
-    }
+  let maxprofit = 0;
+  for (let i = 1; i < prices.length; i++) {
+    // Add to the max profit total if the current price is greater than previous
+    // We "sell" when the the opposite is true because we will not buy on days that dip.
+    if (prices[i] > prices[i - 1])
+      // Add the increse in price to our profit
+      maxprofit += prices[i] - prices[i - 1];
   }
-  return profit;
+  return maxprofit;
 };
 
 console.log("maxProfit", maxProfit(prices));
